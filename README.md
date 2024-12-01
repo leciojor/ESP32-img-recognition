@@ -4,9 +4,8 @@ Dataset can be found at https://drive.google.com/drive/folders/1UfVO9AhdGujUo2W2
 
 ## How to run the model:
 
+* make sure to install all the dependencies in requirements.txt
 * python run.py <model name> <img-file>
-* 
-* 
 
 ![image](https://github.com/user-attachments/assets/0769358d-c494-4ed5-9281-afec4ff2f9e4)
 
