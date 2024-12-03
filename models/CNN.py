@@ -29,10 +29,6 @@ class CNNModel(nn.Module):
         x = self.pool(F.relu(self.conv1(x)))
         x = self.pool(F.relu(self.conv2(x)))
         x = self.pool(F.relu(self.conv3(x)))
-        # if mini:
-        #   x = x.view(-1, 64 * 64 * 32) #Flatten to 1d vector for fully connected layer
-        # else:
-        #   x = x.view(-1, 64 * 64 * 32) #Flatten to 1d vector for fully connected layer
         x = x.view(-1, x.shape[1] * x.shape[2] * x.shape[3])
         x = F.relu(self.fc1(x))
         x = self.fc2(x)
