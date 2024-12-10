@@ -20,6 +20,7 @@ def get_prediction(model, name, img, targets, v=True):
 
     preprocess = transforms.Compose([
         transforms.Resize((128, 64)),
+        transforms.Lambda(lambda img: img.convert('RGB') if img.mode != 'RGB' else img),
         transforms.ToTensor(),
     ])
     
@@ -74,9 +75,6 @@ def run_model(names, img, k=3):
     
 
 
-
-
-    
 
 if __name__ == "__main__":
     if len(sys.argv) < 3 or len(sys.argv) > 4:
